@@ -29,9 +29,9 @@ public class ServerVerticle extends AbstractVerticle {
     public void start() throws Exception {
         Router router = Router.router(vertx);
         // Goodbye EndPoint
-        router.get("/api/goodbye").handler(ctx -> ctx.response().end(goodbye()));
+        router.get("/api/greeting").handler(ctx -> ctx.response().end(greeting()));
         // Nap  Endpoint
-        router.get("/api/nap").blockingHandler(this::nap, false);
+        router.get("/api/compute").blockingHandler(this::nap, false);
 
         vertx.createHttpServer().requestHandler(router::accept).listen(8080);
         System.out.println("Service running at 0.0.0.0:8080");
@@ -50,12 +50,12 @@ public class ServerVerticle extends AbstractVerticle {
             e.printStackTrace();
         }
         */
-        System.out.println("Back from the nap: " + Thread.currentThread().getName());
-        ctx.response().end("Nap from " + new Date().toString());
+        System.out.println("Back from the compute: " + Thread.currentThread().getName());
+        ctx.response().end("Compute Pi completed from " + new Date().toString());
     }
 
-    private String goodbye() {
-        String msg = "Goodbye with Vert.x " + new SimpleDateFormat("yyyy-MM-dd HH:mm:ss:SS").format(new Date()); 
+    private String greeting() {
+        String msg = "Greeting with Vert.x " + new SimpleDateFormat("yyyy-MM-dd HH:mm:ss:SS").format(new Date()); 
         System.out.println(msg);
         return msg;
     }

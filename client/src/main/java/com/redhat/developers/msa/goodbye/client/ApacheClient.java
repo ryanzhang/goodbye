@@ -25,7 +25,7 @@ public class ApacheClient extends Thread {
 
     public void run() {
         // Apache HTTPClient creation
-        HttpGet httpGet = new HttpGet("http://localhost:8080/api/nap");
+        HttpGet httpGet = new HttpGet("http://localhost:8080/api/compute");
         // HttpGet httpGet = new HttpGet("http://localhost:8080/helloworld-rs/rest/json");
         HttpClient httpClient = HttpClientBuilder.create().build();
 

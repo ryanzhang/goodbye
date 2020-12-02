@@ -18,12 +18,12 @@ package com.redhat.developers.msa.goodbye.client;
 
 public class Main {
 
-    private static final int NUMBER_THREADS = 210;
+    private static final int NUMBER_THREADS = 10000;
 
     public static void main(String[] args) throws InterruptedException {
-        System.out.println("Starting Threads");
+        System.out.println("Starting " + NUMBER_THREADS + " Threads");
         for (int x = 0; x < NUMBER_THREADS; x++) {
-            Thread.sleep(20);
+            Thread.sleep(1);
             // new ApacheClientGoodbye().start();
             new ApacheClient().start();
             // new TimeoutApacheClient().start();
