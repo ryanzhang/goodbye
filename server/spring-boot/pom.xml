@@ -19,12 +19,12 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.redhat.developer.msa</groupId>
-	<artifactId>goodbye-server-springboot</artifactId>
+	<artifactId>greeting-server-springboot</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>Red Hat MSA: goodbye-server-springboot</name>
-	<description>Goodbye microservice running on Spring Boot</description>
+	<name>Red Hat MSA: greeting-server-springboot</name>
+	<description>Greeting microservice running on Spring Boot</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -62,7 +62,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>ola</finalName>
+		<finalName>springboot-runner</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>

@@ -25,7 +25,6 @@ public class ReactiveGreetingResource {
     @Path("/compute")
     public Uni<String> greeting() {
         return service.compute();
-        // return service.abc();
     }
 
     @GET

@@ -35,7 +35,7 @@ public class ApacheClient extends Thread {
             result = EntityUtils.toString(httpClient.execute(httpGet).getEntity());
         } catch (Exception e) {
             // Fallback
-            result = "Nap message (Fallback)";
+            result = "Server failure message (Fallback)";
         }
         System.out.println(String.format("#%s - %s", this.getName(), result));
     }
